@@ -1,0 +1,64 @@
+// 不换行
+no-wrap()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+// 扩展点击区域
+extend-click()
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: -10px
+    left: -10px
+    right: -10px
+    bottom: -10px
+
+  //1px边框  border-top
+border-1px($color)
+  position:relative
+  &:after
+    content:''
+    position:absolute
+    top:0
+    left:0
+    display:block
+    width:100%
+    border-top:1px solid $color
+
+// 底部边框
+border-bottom-1px($color)
+  position:relative
+  &:after
+    content:''
+    position:absolute
+    bottom:0
+    right:0
+    display:block
+    width:100%
+    border-bottom:1px solid $color
+
+// 右边框
+border-right-1px($color)
+  position:relative
+  &:after
+    content:''
+    position:absolute
+    top:0
+    right:0
+    display:block
+    width:100%
+    border-right:1px solid $color
+
+  //1px边框  border-bottom
+border-left-1px($color)
+  position:relative
+  &:after
+    content:''
+    position:absolute
+    top:0
+    left:0
+    display:block
+    width:100%
+    border-left:1px solid $color

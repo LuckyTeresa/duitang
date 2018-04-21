@@ -1,0 +1,37 @@
+{
+    "error":0,
+    "index":{
+
+        },
+    "find":{
+
+        },
+    "shop":{
+        "shopTop":{
+            "list":[
+               {
+                    "target": "https://www.duitang.com/guide2/buy_group_purchase/2018040201/?__urlopentype=pageweb",
+                    "tag": "NEW",
+                    "stitle": "第八十四期·不二主义",
+                    "image_url": "https://b-ssl.duitang.com/uploads/people/201803/30/20180330185205_2zEkt.jpeg",
+                    "description": "惠风和畅 去逛手帐集市吧",
+                },
+                {
+                    "target": "https://buy.duitang.com/buy/item/detail/?id=13474&__urlopentype=pageweb",
+                    "tag": "NEW",
+                    "stitle": "",
+                    "style": "",
+                    "nickname": "",
+                    "content_type": "",
+                    "image_url": "https://a-ssl.duitang.com/uploads/people/201804/04/20180404190709_EwKSh.jpeg",
+                }
+            ]
+
+        }
+
+    },
+    "mine":{
+
+    }
+
+}
