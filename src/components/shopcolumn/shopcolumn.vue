@@ -1,13 +1,13 @@
 <template>
 <div>
     <div v-if='columnList.length>0' class='columnWrapper' v-for='(column,index) in columnList'>
-      <div class="columnTitle">
-            <div v-if='column.display_type==2'>
+      <div class="columnTitle" ref='columnTitle'>
+            <div v-show='column.display_type==2'>
                 <div class='topBorder'>
                   <div class='columnTxt topColumn'>
                       <p class="topSubTitle">{{column.description}}</p>
                       <p class='topCountDown'>
-                          <span class='topCountDownItem'>03</span>:<span class='topCountDownItem'>46</span>:<span class='topCountDownItem'>53</span>
+                          <span class='topCountDownItem'>{{hours}}</span>:<span class='topCountDownItem'>{{minutes}}</span>:<span class='topCountDownItem'>{{seconds}}</span>
                       </p>
                       <span class="topSeeDetial">查看详情></span>
                   </div>
@@ -16,7 +16,7 @@
                 <div class='BackgroundBox'>
                 </div>
             </div>
-              <div v-else-if='column.display_type==1'>
+            <div v-show='column.display_type==1'>
                   <div class='columnTxt'>
                       <p class="specialName">{{column.stitle}}</p>
                       <p class="subTitle">{{column.description}}</p>
@@ -25,9 +25,8 @@
                   <img  class='columnBackground' width='100%' :src='column.image_url'>
                   <div class='BackgroundBox'>
                   </div>
-              </div>
-              <!-- 有问题 -->
-              <div v-else>
+            </div>
+            <div v-show='column.display_type==3'>
                   <div class='columnTxt'>
                       <p  class="specialName"></p>
                       <p class="subTitle"></p>
@@ -36,8 +35,7 @@
                   <img class='columnBackground' width='100%' >
                   <div class='BackgroundBox'>
                   </div>
-              </div>
-
+            </div>
       </div>
         <div class='triangle'>
         </div>
@@ -91,6 +89,23 @@ export default {
             }
             // console.log(this.columnList[4].column_list)
     },1000)
+    this.getDownTime();
+  },
+  computed:{
+    hours(){
+        let leftTime=this.getDownTime()-(new Date().getTime())
+        console.log(leftTime)
+        return  parseInt(leftTime/1000/60/60%24,10);
+    },
+    minutes(){
+        let leftTime=this.getDownTime()-(new Date().getTime())
+        return  parseInt(leftTime/1000/60%60,10);
+    },
+    seconds(){
+        let leftTime=this.getDownTime()-(new Date().getTime())
+        return parseInt(leftTime/1000%60,10);
+    }
+
   },
   methods:{
     _setWrapperWidth(goodsWrappers,index){
@@ -102,6 +117,14 @@ export default {
                 width+=goods.children[i].clientWidth
             }
             goods.style.width=width+100+'px';
+    },
+    getDownTime(){
+        for(let i=0;i<this.columnList.length;i++){
+            if(this.columnList[i].display_type==2){
+                console.log(this.columnList[i])
+                return this.columnList[i].disabled_at
+            }
+        }
     },
     _initScroll(goodsBoxs,index){
         this.goods=new BScroll(goodsBoxs[index],{

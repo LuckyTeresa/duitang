@@ -52,26 +52,26 @@ export default {
   },
   methods:{
     initWaterfall(){
-
         let pics=this.$refs.pics
         let picWidth=pics[0].offsetWidth//180,包含20px的padding
         this.$refs.waterFallWrapper.style.width=this.cols*picWidth+'px'//设置宽度
-
         for(let i=0;i<this.waterfall.length;i++){
-          console.log(pics[i].offsetHeight,pics[i].offsetWidth)
-          let picHeight=(this.waterfall[i].photo.height*(picWidth-20))/this.waterfall[i].photo.width+pics[i].offsetHeight//每一个pic的高度
+          // 图片高度/图片宽度=缩小后的高度/盒子宽度-20px的padding(即缩小后图片盒子的宽度)
+          // 图片的获取总是比文字要慢一些,所以先计算预留出图片高度
+          let picHeight=(this.waterfall[i].photo.height*(picWidth-20))/this.waterfall[i].photo.width//每一个图片的高度
 
           if(i<this.cols){
-            this.colHeight.push(picHeight)
-            pics[i].style.height=picHeight+'px';
+            this.checkout(pics[i],picHeight)
+            this.colHeight.push(parseFloat(pics[i].getAttribute('data-offseth')))
           }else{
             let minH=Math.min.apply(null,this.colHeight);
             let index=this.getMinhIndex(this.colHeight,minH);
-            pics[i].style.height=picHeight+'px';
+            this.checkout(pics[i],picHeight)
             pics[i].style.position='absolute';
+
             pics[i].style.top=minH+'px';
             pics[i].style.left=index*picWidth+'px';
-            this.colHeight[index]+=picHeight;
+            this.colHeight[index]+=parseFloat(pics[i].getAttribute('data-offseth'))
           }
 
         }
@@ -85,6 +85,14 @@ export default {
                 return i;
             }
         }
+    },
+    checkout(obj,height){
+      if(obj.getAttribute('data-offseth')==null){
+        obj.style.height=height+obj.offsetHeight+'px';
+        obj.setAttribute('data-offseth',obj.style.height);
+      }else{
+        obj.style.height=obj.getAttribute('data-offseth')
+      }
     }
   }
 }
@@ -103,14 +111,9 @@ export default {
     width:180px
     float:left
     box-sizing:border-box
-    // border-right-1px(red)
-    // border-1px(red)
-    // border-bottom-1px(red)
-    // border-left-1px(red)
     .pic
       background:$color-element
       font-size:$font-size-medium
-      // break-inside:avoid//避免文本块分解为单独的列
       .image
         width:160px
         font-size:0

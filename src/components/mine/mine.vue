@@ -49,12 +49,58 @@
         </div>
         <div class='luckyBag'>
         <div class='myPresent'>
-            
+
         </div>
         <div class='myArticle'>
-            
+
         </div>
-            
+
+        </div>
+    </div>
+    <div class='order'>
+        <div class='orderTxt'>
+                <div class='orderTxtLeft'>
+                    <span class='iconfont icon-youhuiquan orderLeftIcon'></span>
+                    <span>我的礼券</span>
+                </div>
+                <div>&gt;</div>
+        </div>
+        <div class='orderTxt last' >
+                <div class='orderTxtLeft'>
+                    <span class='iconfont icon-gouwudai orderLeftIcon'></span>
+                    <span>我的福袋</span>
+                </div>
+                <div>&gt;</div>
+        </div>
+    </div>
+    <div class='order'>
+        <div class='orderTxt'>
+                <div class='orderTxtLeft'>
+                    <span class='iconfont icon-aixin orderLeftIcon'></span>
+                    <span>我的专辑</span>
+                </div>
+                <div>&gt;</div>
+        </div>
+        <div class='orderTxt'>
+                <div class='orderTxtLeft'>
+                    <span class='iconfont icon-tianxie orderLeftIcon'></span>
+                    <span>我的文章</span>
+                </div>
+                <div>&gt;</div>
+        </div>
+        <div class='orderTxt'>
+                <div class='orderTxtLeft'>
+                    <span class='iconfont icon-shoucang orderLeftIcon'></span>
+                    <span>我的收藏</span>
+                </div>
+                <div>&gt;</div>
+        </div>
+        <div class='orderTxt last'>
+                <div class='orderTxtLeft'>
+                    <span class='iconfont icon-liaotian orderLeftIcon'></span>
+                    <span>评论/消息</span>
+                </div>
+                <div>&gt;</div>
         </div>
     </div>
 </div>
@@ -127,6 +173,8 @@ export default {
         display:flex
         justify-content:space-between
         padding-bottom:20px
+        &.last
+            padding-bottom:0
         .orderLeftIcon
             font-size:24px
             display:inline-block

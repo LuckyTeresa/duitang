@@ -81,9 +81,14 @@ export default {
     _getColumnData(){
         getColumnData().then((res)=>{
             if(res.status==ERR_OK){
-                this.columnList=res.data.object_list;
+              let temp=res.data.object_list;
+                for(let i=0;i<temp.length;i++){
+                  if(temp[i].display_type!=3){
+                    this.columnList.push(temp[i])
+                  }
+                }
+                console.log(this.columnList);
             }
-            console.log(this.columnList)
         })
     }
   }
