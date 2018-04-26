@@ -2,9 +2,8 @@
 
 ##预览 
 
-<img src='http://i2.bvimg.com/643216/e67c384c85b61ccb.gif'><br />
-无法加载直接访问这里http://i2.bvimg.com/643216/e67c384c85b61ccb.gif<br />
-![Markdown](http://i2.bvimg.com/643216/2ce75330167ecdc9.gif)<br />
+![Markdown](http://i2.bvimg.com/643216/e42c82b318918b36.gif)<br />
+![Markdown](http://i2.bvimg.com/643216/3881136796aefbcd.gif)<br />
 
 ##目前实现的功能    
 1.多级路由页面    
