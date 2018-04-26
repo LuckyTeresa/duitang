@@ -1,7 +1,7 @@
 # duitang  
 
 ##预览  
-![Markdown](http://i2.bvimg.com/643216/e67c384c85b61ccb.gif)<br />
+![Markdown](http://i2.bvimg.com/643216/e6880e160f5e2399.gif)<br />
 ![Markdown](http://i2.bvimg.com/643216/2ce75330167ecdc9.gif)<br />
 
 ##目前实现的功能    
