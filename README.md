@@ -3,7 +3,7 @@
 ##预览 
 
 <img src='http://i2.bvimg.com/643216/e67c384c85b61ccb.gif'><br />
-无法加载直接访问这里http://i2.bvimg.com/643216/e67c384c85b61ccb.gif
+无法加载直接访问这里http://i2.bvimg.com/643216/e67c384c85b61ccb.gif<br />
 ![Markdown](http://i2.bvimg.com/643216/2ce75330167ecdc9.gif)<br />
 
 ##目前实现的功能    
